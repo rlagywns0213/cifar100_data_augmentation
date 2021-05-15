@@ -125,3 +125,28 @@ RandAugment(0, 20)
 2> 파라미터
 - probability = 0.2, sh = 0.4, r1 = 0.5
 - **Best Top-1 Accuracy:78.74**
+
+
+## 2. RandomChanging + Cutmix
+
+![image](https://user-images.githubusercontent.com/28617444/118347093-7d234380-b57b-11eb-9007-279717612c18.png)
+
+
+
+#### GradCAM
+
+![image](https://user-images.githubusercontent.com/28617444/118347122-ae9c0f00-b57b-11eb-9270-8c696326bb1b.png)
+
+
+#### 성능 비교
+
+- 타당성을 높이기 위해 2번의 성능 도출 후, 이를 평균
+![image](https://user-images.githubusercontent.com/28617444/118347178-194d4a80-b57c-11eb-977f-15b3f168e453.png)
+
+  - 2Randomchange 의 경우, Random change 코드를 변형하여 2개의 구역을 설정하였지만, 큰 성능 개선을 보이지 않음
+
+## 결론
+
+- 기존 Baseline cutout 보다 높은 성능을 가지는 것을 확인
+- GradCam 결과, 타겟의 feature를 정확히 찾고 있음
+- cutmix와 함께 적용 시, 기존 cutmix보다 다소 우수한 성능
